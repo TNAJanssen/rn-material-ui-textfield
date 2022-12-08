@@ -311,7 +311,7 @@ export default class TextField extends PureComponent {
     return input.isFocused();
   }
 
-  isRestricted() {
+    isRestricted() {
     let { characterRestriction: limit } = this.props;
     let { length: count } = this.value();
 
@@ -648,7 +648,7 @@ export default class TextField extends PureComponent {
       style: containerStyle,
       onStartShouldSetResponder: () => true,
       onResponderRelease: this.onPress,
-      pointerEvents: !disabled ? 'auto' : 'none',
+      pointerEvents: !disabled && editable ? 'auto' : 'none',
     };
 
     let inputContainerProps = {
